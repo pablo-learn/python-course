@@ -1,22 +1,22 @@
-name,price,quantity
-Laptop,1200,4
-Mouse,45,120
-Keyboard,70,60
-Monitor,320,15
-Headphones,150,25
-Webcam,85,40
-Printer,200,10
-Tablet,400,30
-Smartphone,800,20
-External Hard Drive,100,50
-Speaker,90,35
-Microphone,110,18
-Charger,25,150
-USB Cable,10,200
-Power Bank,60,80
-Router,150,25
-Mouse Pad,20,100
-Laptop Stand,55,45
-Projector,550,8
-Graphics Tablet,250,12
-Wireless Charger,75,100
+name,price,quantity,total_value
+Laptop,1200,4,4800.0
+Mouse,45,120,5400.0
+Keyboard,70,60,4200.0
+Monitor,320,15,4800.0
+Headphones,150,25,3750.0
+Webcam,85,40,3400.0
+Printer,200,10,2000.0
+Tablet,400,30,12000.0
+Smartphone,800,20,16000.0
+External Hard Drive,100,50,5000.0
+Speaker,90,35,3150.0
+Microphone,110,18,1980.0
+Charger,25,150,3750.0
+USB Cable,10,200,2000.0
+Power Bank,60,80,4800.0
+Router,150,25,3750.0
+Mouse Pad,20,100,2000.0
+Laptop Stand,55,45,2475.0
+Projector,550,8,4400.0
+Graphics Tablet,250,12,3000.0
+Wireless Charger,75,100,7500.0

@@ -1,6 +1,6 @@
 import csv
 
-field_names = ['name', 'price', 'quantity']
+field_names = ['name', 'price', 'quantity', 'total_value']
 
 #Leer un archivo
 with open('products.csv', mode='r') as file:
@@ -14,6 +14,7 @@ with open('products.csv', mode='r') as file:
                 {
                     'name': row['name'],
                     'price': row['price'],
-                    'quantity': row['quantity']
+                    'quantity': row['quantity'],
+                    'total_value': float(row['price']) * float(row['quantity'])
                 }
             )
