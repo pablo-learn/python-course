@@ -9,6 +9,8 @@ BLUE = "\033[34m"
 YELLOW = "\033[33m"
 RESET = "\033[0m"
 
+iterations_ammount = 300
+
 def task(args):
     print(f"{YELLOW}Task started: {args}{RESET}")
     time.sleep(2)
@@ -16,7 +18,7 @@ def task(args):
 
 async def threadingTasks():
     threads = []
-    for i in range(3):
+    for i in range(iterations_ammount):
         thread = threading.Thread(target=task, args=(f"thread: {i}",))
         threads.append(thread)
         thread.start()
@@ -26,7 +28,7 @@ async def threadingTasks():
 
 async def multiprocessingTasks():
     with multiprocessing.Pool() as pool:
-        args = [f"multiprocessing: {i}" for i in range(3)]
+        args = [f"multiprocessing: {i}" for i in range(iterations_ammount)]
         results = pool.map(task, args)
         print(results)
 
