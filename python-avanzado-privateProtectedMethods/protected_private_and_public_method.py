@@ -17,4 +17,4 @@ base = BaseClass()
 #base._protected_method()
 
 #base.public_method()
-print(base.__private_variable)
+print(base._protected_method())
