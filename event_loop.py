@@ -8,5 +8,6 @@ async def main():
         tarea("Ana"),
         tarea("Bob")
     )
+    await tarea("Carlos common await")
 
 asyncio.run(main())
