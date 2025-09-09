@@ -1,2 +1,6 @@
 __pycache__/
 *.Identifier
+build/
+*.egg-info/
+__pycache__/
+*.pyc

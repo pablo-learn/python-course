@@ -1,0 +1,10 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "lluvia-with-tensor"
+version = "0.1.0"
+dependencies = [
+    "tensorflow>=2.15.0"
+]
