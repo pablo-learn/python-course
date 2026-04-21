@@ -1,0 +1,138 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blog Suffolk: Novedades y Artículos</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary: #1a2a1a;
+                --accent: #d4af37;
+                --text-light: #f4f4f4;
+                --text-dark: #333;
+                --bg-light: #fafafa;
+                --card-bg: #ffffff;
+                --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Outfit", sans-serif;
+                background-color: var(--bg-light);
+                color: var(--text-dark);
+                line-height: 1.6;
+            }
+
+            header {
+                background: var(--primary);
+                color: var(--text-light);
+                padding: 60px 20px;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 3rem;
+                margin-bottom: 10px;
+                color: var(--accent);
+            }
+
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+
+            .article-card {
+                background: var(--card-bg);
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: var(--shadow);
+                margin-bottom: 40px;
+                transition: transform 0.3s ease;
+                border-left: 5px solid var(--accent);
+            }
+
+            .article-card:hover {
+                transform: translateX(10px);
+            }
+
+            .article-card h2 {
+                color: var(--primary);
+                margin-bottom: 10px;
+            }
+
+            .article-card .date {
+                font-size: 0.9rem;
+                color: #777;
+                margin-bottom: 20px;
+            }
+
+            .article-card .content {
+                font-size: 1.1rem;
+            }
+
+            .back-link {
+                display: inline-block;
+                margin-top: 40px;
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .back-link:hover {
+                text-decoration: underline;
+            }
+
+            footer {
+                background: #111;
+                color: #777;
+                text-align: center;
+                padding: 40px 20px;
+                font-size: 0.9rem;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Blog Suffolk</h1>
+            <p>Conocimiento y actualidad sobre la raza</p>
+        </header>
+
+        <main class="container">
+            {% for article in articles %}
+            <article class="article-card">
+                <h2>{{ article.titulo }}</h2>
+                <p class="date">{{ article.fecha|date:"d M, Y" }}</p>
+                <div class="content">
+                    {{ article.contenido|linebreaks }}
+                </div>
+            </article>
+            {% empty %}
+            <div style="text-align: center; padding: 40px">
+                <p>Aún no hay artículos publicados. ¡Vuelve pronto!</p>
+            </div>
+            {% endfor %}
+
+            <a href="{% url 'home' %}" class="back-link">← Volver al inicio</a>
+        </main>
+
+        <footer>
+            <p>
+                &copy; 2026 Sociedad de Criadores de Suffolk - Uruguay. Todos
+                los derechos reservados.
+            </p>
+        </footer>
+    </body>
+</html>

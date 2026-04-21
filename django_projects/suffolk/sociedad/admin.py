@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Persona
+from .models import Persona, Article
 
 class PersonaAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'apellido', 'dni', 'sexo')
@@ -10,3 +10,4 @@ class PersonaAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Persona, PersonaAdmin)
+admin.site.register(Article)
