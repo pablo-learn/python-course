@@ -5,12 +5,6 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 
 # Create your views here.
-def personas(request):
-    personas = Persona.objects.all().values()
-    return JsonResponse({
-        'socios': list(personas)
-    })
-
 def home(request):
     return render(request, 'index.html')
 
